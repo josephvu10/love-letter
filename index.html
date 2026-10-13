@@ -1,0 +1,164 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>A Little Surprise 💜</title>
+
+  <!-- Connect our CSS design file -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Optional: elegant fonts from Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <!-- Decorative background elements -->
+  <div class="sparkle sparkle-one">✦</div>
+  <div class="sparkle sparkle-two">✧</div>
+  <div class="sparkle sparkle-three">✦</div>
+
+  <main class="app">
+
+    <!-- =========================
+         PAGE 1: HELLO
+         ========================= -->
+    <section class="page active" id="page1">
+
+      <p class="eyebrow">♡ a little something for you ♡</p>
+
+      <h1 class="hello-title">hello<span>.</span></h1>
+
+      <p class="subtitle">here is a message for you</p>
+
+      <!-- POLAROID 1:
+           Change the image src to your photo filename.
+           Change the caption text to your personal message.
+           See the instructions below for how to add photos. -->
+      <div class="polaroid polaroid-tilt-one">
+        <div class="photo-frame">
+          <img
+            src="photos/photo1.jpg"
+            alt="A special memory"
+            class="polaroid-image"
+          />
+        </div>
+        <p class="polaroid-caption">
+          our first date ♡
+        </p>
+      </div>
+
+      <button class="next-button" onclick="goToPage(2)">
+        next <span>→</span>
+      </button>
+
+    </section>
+
+
+    <!-- =========================
+         PAGE 2: THE SURPRISE
+         ========================= -->
+    <section class="page" id="page2">
+
+      <p class="eyebrow">♡ just because ♡</p>
+
+      <h2 class="surprise-title">
+        I know you're really busy
+        <br />
+        but here is a little surprise
+      </h2>
+
+      <p class="subtitle">something to make you smile</p>
+
+      <!-- POLAROID 2:
+           Replace photo2.jpg with your own image.
+           Edit the caption underneath the image. -->
+      <div class="polaroid polaroid-tilt-two">
+        <div class="photo-frame">
+          <img
+            src="photos/photo2.jpg"
+            alt="Another special memory"
+            class="polaroid-image"
+          />
+        </div>
+        <p class="polaroid-caption">
+          the start of our adventure in chattanooga ♡
+        </p>
+      </div>
+
+      <button class="next-button" onclick="goToPage(3)">
+        next <span>→</span>
+      </button>
+
+    </section>
+
+
+    <!-- =========================
+         PAGE 3: FIVE MEMORIES
+         No next button on this page!
+         ========================= -->
+    <section class="page" id="page3">
+
+      <p class="eyebrow">♡ little pieces of us ♡</p>
+
+      <h2 class="memories-title">our memories</h2>
+
+      <p class="subtitle">
+        five little reminders of how special you are
+      </p>
+
+      <div class="gallery">
+
+        <!-- The arrow on the left moves backward.
+             The gallery loops from photo 1 to photo 5. -->
+        <button
+          class="arrow-button"
+          onclick="movePhoto(-1)"
+          aria-label="Previous photo"
+        >←</button>
+
+        <!-- PHOTO CAROUSEL:
+             JavaScript fills this card with your five photos. -->
+        <div class="polaroid gallery-polaroid" id="galleryPolaroid">
+          <div class="photo-frame gallery-photo-frame">
+            <img
+              id="galleryImage"
+              src="photos/photo3.jpg"
+              alt="Memory 1 of 5"
+              class="polaroid-image"
+            />
+          </div>
+          <p class="polaroid-caption" id="galleryCaption">
+            my favorite memory ♡
+          </p>
+        </div>
+
+        <!-- The right arrow moves forward.
+             The gallery loops from photo 5 back to photo 1. -->
+        <button
+          class="arrow-button"
+          onclick="movePhoto(1)"
+          aria-label="Next photo"
+        >→</button>
+
+      </div>
+
+      <!-- Shows which photo is currently displayed -->
+      <p class="photo-counter" id="photoCounter">01 / 05</p>
+
+      <p class="ending-note">and many more memories to come ♡</p>
+
+      <!-- IMPORTANT:
+           There is intentionally NO next button here. -->
+
+    </section>
+
+  </main>
+
+  <!-- Connect our JavaScript interaction file -->
+  <script src="script.js"></script>
+</body>
+</html>
